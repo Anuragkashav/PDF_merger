@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Merger</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">MyPDFMerger</div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/login">Sign In</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Merge Your PDFs</h1>
+        <form action="/merge" method="POST" enctype="multipart/form-data">
+            <input type="file" name="pdf_files" accept=".pdf" multiple required>
+            <button type="submit">Merge PDFs</button>
+        </form>
+        <div class="loader" id="loader" style="display:none;"></div>
+    </main>
+
+    <section class="comments">
+        <h2>Leave a Comment</h2>
+        <textarea placeholder="Write your comment..."></textarea>
+        <button type="button">Submit</button>
+    </section>
+
+    <footer>
+        <div class="socials">
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.querySelector('form');
+        const loader = document.getElementById('loader');
+
+        form.addEventListener('submit', () => {
+            loader.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
